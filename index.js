@@ -5,8 +5,10 @@ const ulEl = document.getElementById("ul-el")
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value);
-    //input content to page as a list
-    renderLeads()
+    //clearing input field after SAVE INPUT button is clicked
+    inputEl.value = "";
+    //rendering to list
+    renderLeads();
 });
 
 function renderLeads() {
