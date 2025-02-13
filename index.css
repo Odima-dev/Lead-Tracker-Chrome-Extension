@@ -31,13 +31,14 @@ button {
 }
 
 ul {
-
+    
 }
 
 li {
-
+    color: #5f9341;
+    list-style-type: none;
 }
 
 a {
-    
+    color: #5f9341;
 }
