@@ -15,6 +15,7 @@ function renderLeads() {
     let listItem = "";
     //Rendering the leads in the unordered list using ulEl.textContent
     for (let i=0; i<myLeads.length; i++) {
+        //improving code by using template string
         listItem += `
         <li>
             <a target='_blank' href='${myLeads[i]}'>${myLeads[i]}</a>
