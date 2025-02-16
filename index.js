@@ -10,10 +10,10 @@ if (leadsFromLocalStorage) {
     renderLeads();
 }
 
-deleteBtn.addEventListener("dblclick" function() {
+deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear();
     myLeads = [];
-    ulEl.innerHTML = "";
+    renderLeads();
 
 })
 
