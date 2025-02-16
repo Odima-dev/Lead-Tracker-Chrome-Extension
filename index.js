@@ -2,7 +2,6 @@ let myLeads = [];
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el")
-
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
 if (leadsFromLocalStorage) {
@@ -19,8 +18,6 @@ inputBtn.addEventListener("click", function() {
     localStorage.setItem("myLeads", JSON.stringify(myLeads));
     //rendering to list
     renderLeads();
-
-    console.log(localStorage.getItem("myLeads"))
 });
 
 function renderLeads() {
