@@ -11,6 +11,19 @@ if (leadsFromLocalStorage) {
     render(myLeads);
 }
 
+function render(leads) {
+    let listItem = "";
+    //Rendering the leads in the unordered list using ulEl.textContent
+    for (let i=0; i<myLeads.length; i++) {
+        //improving code by using template string
+        listItem += `
+        <li>
+            <a target='_blank' href='${myLeads[i]}'>${myLeads[i]}</a>
+        </li>`;
+}
+    ulEl.innerHTML = listItem;
+}
+
 deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear();
     myLeads = [];
@@ -27,16 +40,5 @@ inputBtn.addEventListener("click", function() {
     renderLeads();
 });
 
-function renderLeads() {
-    let listItem = "";
-    //Rendering the leads in the unordered list using ulEl.textContent
-    for (let i=0; i<myLeads.length; i++) {
-        //improving code by using template string
-        listItem += `
-        <li>
-            <a target='_blank' href='${myLeads[i]}'>${myLeads[i]}</a>
-        </li>`;
-}
-    ulEl.innerHTML = listItem;
-}
+
 
