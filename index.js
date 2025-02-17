@@ -11,34 +11,29 @@ if (leadsFromLocalStorage) {
     render(myLeads);
 }
 
-function render(leads) {
-    let listItem = "";
-    //Rendering the leads in the unordered list using ulEl.textContent
-    for (let i=0; i<leads.length; i++) {
-        //improving code by using template string
-        listItem += `
-        <li>
-            <a target='_blank' href='${leads[i]}'>${leads[i]}</a>
-        </li>`;
-}
-    ulEl.innerHTML = listItem;
+function renderLeads() {
+    let listItems = ""
+    for (let i = 0; i < myLeads.length; i++) {
+        listItems += `
+            <li>
+                <a target='_blank' href='${myLeads[i]}'>
+                    ${myLeads[i]}
+                </a>
+            </li>
+        `
+    }
+    ulEl.innerHTML = listItems
 }
 
 deleteBtn.addEventListener("dblclick", function() {
-    localStorage.clear();
-    myLeads = [];
-    render(myLeads);
+    localStorage.clear()
+    myLeads = []
+    renderLeads()
 })
 
 inputBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value);
-    //clearing input field after SAVE INPUT button is clicked
-    inputEl.value = "";
-    //save myLeads array to localStorage
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
-    //rendering to list
-    render(myLeads);
-});
-
-
-
+    myLeads.push(inputEl.value)
+    inputEl.value = ""
+    localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+    renderLeads()
+})
