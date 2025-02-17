@@ -4,12 +4,21 @@ const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const deleteBtn = document.getElementById("delete-btn");
 const ulEl = document.getElementById("ul-el")
+const tabBtn = document.getElementById("tab-el");
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage;
     render(myLeads);
 }
+
+const tabs = [
+    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
+];
+
+tabBtn.addEventListener("click", function(tabs) {
+    console.log(tabs)
+})
 
 function render(leads) {
     let listItems = ""
