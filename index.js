@@ -4,7 +4,7 @@ const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const deleteBtn = document.getElementById("delete-btn");
 const ulEl = document.getElementById("ul-el")
-const tabBtn = document.getElementById("tab-el");
+const tabBtn = document.getElementById("tab-btn");
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
 if (leadsFromLocalStorage) {
@@ -16,8 +16,8 @@ const tabs = [
     {url: "https://www.linkedin.com/in/per-harald-borgen/"}
 ];
 
-tabBtn.addEventListener("click", function(tabs) {
-    console.log(tabs)
+tabBtn.addEventListener("click", function() {
+    console.log(tabs[0].url);
 })
 
 function render(leads) {
